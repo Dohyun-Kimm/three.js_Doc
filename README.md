@@ -17,6 +17,15 @@ WebGL을 지원하지 않는 브러우저나 디바이스가 간혹 있다. 따�
 
 ### Drawing lines
 
+Mesh를 사용하지 않고 선이나 원을 그리는 방법.
+Mesh를 구현할때와 마찬가지로, Renderer을 먼저 만들고 index.html의 body태그의 하위로 추가한다.
+Scene을 구성한 다음,
+LineBasicMaterial 매서드를 사용해 선의 색을 지정한 material을 선언한다.
+BufferGeometry 매서드를 사용해 선을 이을 점들의 좌표를 지정한 points를 만들고
+이 점들을 setFromPoints 매서드를 사용해 geometry변수에 담는다.
+
+geometry와 material을 line에 합쳐서 Scene에 올리고 Scene을 renderer에 추가하면 아래와 같은 그림이 나오는 것을 확인 할 수 있다.
+
 ### Creating text
 
 ### Loading 3D Model
