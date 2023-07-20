@@ -28,6 +28,36 @@ geometry와 material을 line에 합쳐서 Scene에 올리고 Scene을 renderer�
 
 ### Creating text
 
+Three.js에 텍스트를 얹는 방법.
+
+1. DOM + CSS
+2. Use CSS2DRenderer or CSS3DRenderer
+3. Draw text to canvas and use as a Texture
+4. Create a model in your favourite 3D application and export to three.js(Blender)
+5. Procedural Text Geometry.
+6. Bitmap Fonts
+7. Troika Text
+
 ### Loading 3D Model
+
+서로 다른 목적이나 특징, 복잡도를 가진 다양한 파일 형식의 3D 모델을 지원한다. 하지만 올바른 포멧이나 workflow를 선택하는 것이 중요하다. Three.js에서 권장하는 workflow가 있다.
+되도록이면 glTF(GL Transmission Format) 형식을 권장한다. .GLB와 .GLTF 모두 지원한다. glTF는 런타임 전송에 특화되어 전송과 로딩 속도가 빠르다.
+Sketchfab과 같은 사이트에서 공용 도메인 glTF파일을 사용할 수 있다.
+모델 추출 할 수 있는 툴
+
+- Blender
+- Substance Painter
+- Modo
+- Toolbag
+- Houdini
+- Cinema 4D
+- COLLADA2GLTF
+- FBX2GLTX
+- OBJ2GLTF
+
+==> 연습 코드에서 오류는 없지만 3d 객체가 랜더링 되지 않음.
+Scene에 올라가 있고, 카메라도 있고, 빛이 없어서 안되는건가했지만 빛도 있음....안타나나는 이유 찾는중....
+해결 방법:
+랜더링이 되고 있었는데 너무 작아서 안보였다.카메라 거리를 조절 하다 보니 콩알만한 크기의 랜더링 된 물체를 찾을 수 있었다. 로딩한 파일은 gltf.scene에 저장되어있기 때문에 gltf.scene.scale.multiplyScalar() 매서드를 통해 객체를 키울수 있었다.
 
 ### Libraries and Plugins
